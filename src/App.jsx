@@ -1,11 +1,14 @@
-
-import './App.css'
+import './App.scss'
+import Container from './components/common/Container/Container'
+import Input from './components/common/Input/Input'
 
 function App() {
 
   return (
     <>
-     <h1>Age calculator</h1>
+    <Container>
+    <h1>Age calculator</h1>
+    </Container>
     </>
   )
 }
