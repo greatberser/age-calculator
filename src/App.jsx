@@ -1,12 +1,9 @@
-import './App.scss'
-import Container from './components/common/Container/Container'
+import WrapCalc from './WrapCalc/WrapCalc';
 function App() {
 
   return (
     <>
-    <Container>
-    <h1>Age calculator</h1>
-    </Container>
+    <WrapCalc />
     </>
   )
 }

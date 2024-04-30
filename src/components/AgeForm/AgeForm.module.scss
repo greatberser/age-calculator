@@ -1,0 +1,42 @@
+.form{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    border-bottom: 1px solid hsl(0, 0%, 86%);
+    padding: 0 0 65px;
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    max-width: 88px;
+
+
+    span{
+        text-transform: uppercase;
+        font-weight: 700;
+        color: hsl(0, 0%, 86%);
+    }
+
+    input{
+        background-color: transparent;
+        padding: 15px 10px;
+        border: 1px solid hsl(0, 0%, 86%);
+        border-radius: 10px;
+        font-size: 32px;
+
+        text-transform: uppercase;
+        font-weight: 700;
+        color: black;
+
+        &::placeholder{
+            color: hsl(0, 1%, 44%);
+        }
+
+        @media screen and (min-width: 768px) {
+            max-width: 145px;
+        }
+    }
+}
