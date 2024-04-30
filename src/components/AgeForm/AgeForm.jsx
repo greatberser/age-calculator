@@ -36,6 +36,7 @@ const AgeForm = () => {
                         type="number"
                         name="year"
                         placeholder="yyyy"
+                        min="1990"
                     />
                 </label>
 
