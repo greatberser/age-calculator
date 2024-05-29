@@ -16,7 +16,8 @@ const AgeForm = ({ updateAge }) => { // Отримуємо updateAge як про
     };
 
     return (
-        <Formik
+        <div className={s.wrapFrom}>
+            <Formik
             initialValues={{ day: '', month: '', year: '' }}
             onSubmit={(values) => {
                 calculateAge(values.day, values.month, values.year);
@@ -64,6 +65,8 @@ const AgeForm = ({ updateAge }) => { // Отримуємо updateAge як про
                 </Form>
             )}
         </Formik>
+        </div>
+
     );
 };
 
