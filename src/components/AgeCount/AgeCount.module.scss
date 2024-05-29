@@ -1,0 +1,17 @@
+.ageCountContainer{
+    padding-top: 65px;
+
+    & p {
+        color: hsl(259, 100%, 65%);
+        font-size: 64px;
+        font-weight: 700;
+        line-height: 1.5;
+        padding: 0;
+        margin: 0;
+    }
+
+    & span {
+        color: black;
+        font-size: 48px;
+    }
+}

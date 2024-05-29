@@ -1,47 +1,68 @@
-import { Field, Form, Formik } from "formik";
-import Button from "../Button/Button";
-import s from './AgeForm.module.scss'
+import { Field, Form, Formik } from 'formik';
+import { differenceInYears } from 'date-fns';
+import Button from '../Button/Button';
+import s from './AgeForm.module.scss';
 
-const AgeForm = () => {
+const AgeForm = ({ updateAge }) => { // Отримуємо updateAge як пропс
+    const calculateAge = (day, month, year) => {
+        const today = new Date();
+        const birthDate = new Date(year, month - 1, day);
+
+        const years = differenceInYears(today, birthDate);
+        const months = years * 12;
+        const days = year * 365;
+
+        updateAge({ years, months, days });
+    };
+
     return (
-        <Formik>
-            <Form className={s.form}>
-                <label className={s.label}>
-                    <span>
-                        day
-                    </span>
-                    <Field 
-                        type="number"
-                        name="age"
-                        placeholder="dd"
-                    />
-                </label>
+        <Formik
+            initialValues={{ day: '', month: '', year: '' }}
+            onSubmit={(values) => {
+                calculateAge(values.day, values.month, values.year);
+            }}
+        >
+            {({ handleSubmit }) => (
+                <Form className={s.form} onSubmit={handleSubmit}>
+                    <label className={s.label}>
+                        <span>Day</span>
+                        <Field 
+                            type="number"
+                            name="day"
+                            placeholder="dd"
+                            min="1"
+                            max="31"
+                            required
+                        />
+                    </label>
 
-                <label className={s.label}>
-                    <span>
-                        month
-                    </span>
-                    <Field 
-                        type="number"
-                        name="month"
-                        placeholder="mm"
-                    />
-                </label>
+                    <label className={s.label}>
+                        <span>Month</span>
+                        <Field 
+                            type="number"
+                            name="month"
+                            placeholder="mm"
+                            min="1"
+                            max="12"
+                            required
+                        />
+                    </label>
 
-                <label className={s.label}>
-                    <span>
-                        year
-                    </span>
-                    <Field 
-                        type="number"
-                        name="year"
-                        placeholder="yyyy"
-                        min="1990"
-                    />
-                </label>
+                    <label className={s.label}>
+                        <span>Year</span>
+                        <Field 
+                            type="number"
+                            name="year"
+                            placeholder="yyyy"
+                            min="1900"
+                            max={new Date().getFullYear()}
+                            required
+                        />
+                    </label>
 
-                {/* <Button /> */}
-            </Form>
+                    <Button />
+                </Form>
+            )}
         </Formik>
     );
 };

@@ -1,9 +1,18 @@
-import React from 'react';
+import s from './AgeCount.module.scss';
 
-const AgeCount = () => {
+const AgeCount = ({ age }) => {
     return (
-        <div>
-            AgeCout
+        <div className={s.ageCountContainer}>
+            <p>
+                {age.years} 
+                <span> years</span>
+            </p>
+            <p>{age.months}
+                <span> months</span>
+            </p>
+            <p>{age.days}
+                <span> days</span>
+            </p>
         </div>
     );
 };

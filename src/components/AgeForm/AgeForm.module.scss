@@ -13,7 +13,6 @@
     flex-wrap: nowrap;
     max-width: 88px;
 
-
     span{
         text-transform: uppercase;
         font-weight: 700;
@@ -25,7 +24,17 @@
         padding: 15px 10px;
         border: 1px solid hsl(0, 0%, 86%);
         border-radius: 10px;
-        font-size: 32px;
+        font-size: 24px;
+        
+
+        &:hover,
+        &:focus{
+            border-color: hsl(259, 100%, 65%);
+        }
+
+        &:focus-visible{
+            border: none;
+        }
 
         text-transform: uppercase;
         font-weight: 700;
@@ -36,11 +45,11 @@
         }
 
         @media screen and (min-width: 768px) {
-            max-width: 145px;
+            font-size: 32px;
         }
+    }
 
-        @media screen and (min-width: 1440px) {
-            max-width: 145px;
-        }
+    @media screen and (min-height:768px) {
+        max-width: 150px;
     }
 }

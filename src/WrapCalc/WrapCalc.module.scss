@@ -1,4 +1,8 @@
 .wrapCalc{
     background-color: #fff;
     padding: 60px 20px;
+
+    @media screen and (min-width:768px) {
+        padding: 60px;
+    }
 }
