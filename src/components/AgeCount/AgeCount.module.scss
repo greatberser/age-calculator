@@ -3,15 +3,20 @@
 
     & p {
         color: hsl(259, 100%, 65%);
-        font-size: 64px;
         font-weight: 700;
+        font-size: 48px;
         line-height: 1.5;
         padding: 0;
         margin: 0;
+
+        @media screen and (min-width: 768px) {
+            font-size: 64px;
+        }
     }
 
     & span {
         color: black;
-        font-size: 48px;
+        font-size: 32px;
     }
+
 }
