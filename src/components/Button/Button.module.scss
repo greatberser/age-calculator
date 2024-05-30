@@ -1,26 +1,29 @@
-.btn{
+.btn {
     position: absolute;
+    z-index: 2;
     left: 50%;
-    top: 28.7%;
+    top: 80%;
     transform: translate(-50%, -50%);
-    border-radius: 100%;
+    background-color: hsl(259, 100%, 65%);
+    border-radius: 50%;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     &:hover, 
-    &:focus{
+    &:focus {
         background-color: black;
     }
 
     @media screen and (min-width: 768px) {
-        top: 29.8%;
-        left: 85%;
+        top: 81%;
+        left: 94%;
     }
 
     @media screen and (min-width: 1440px) {
-        top: 18%;
-        left: 67%;
+        top: 81%;
+        left: 93%;
     }
 }
