@@ -10,6 +10,7 @@
 .form{
     display: flex;
     align-items: center;
+    width: 100%;
     gap: 15px;
 
     border-bottom: 1px solid hsl(0, 0%, 86%);
@@ -20,7 +21,6 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
-    max-width: 88px;
 
     span{
         text-transform: uppercase;
@@ -55,6 +55,7 @@
 
         @media screen and (min-width: 768px) {
             font-size: 32px;
+            width: 90px;
         }
     }
 
